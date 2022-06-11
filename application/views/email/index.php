@@ -214,8 +214,8 @@
         let fileUpload = '';
 
         //CSRF Token
-        let csrfName = $('.txt_csrfname').attr('name');
-        let csrfHash = $('.txt_csrfname').val();
+        // let csrfName = $('.txt_csrfname').attr('name');
+        // let csrfHash = $('.txt_csrfname').val();
 
         //Function for tidying text file
         $('#inputFile').on('change', (e) => {
@@ -264,14 +264,14 @@
         //     })
         // }
 
-        dataEmail.on('change', (event) => {
+        dataEmail.on('change', (e) => {
             const result = $('#text_template');
-            if (event.target.value === 'Shopee') {
-                result.text(`Halo kami dari ${event.target.value} kami ingin memberikan anda informasi bahwa anda mendapatkan hadiah 1 milliar rupiah.`);
-            } else if (event.target.value === 'Tokopedia') {
-                result.text(`Halo kami dari ${event.target.value} kami kami ingin memberikan anda hadiah yaitu mobil BMW 1 unit.`);
+            if (e.target.value === 'Shopee') {
+                result.text(`Halo kami dari ${e.target.value} kami ingin memberikan anda informasi bahwa anda mendapatkan hadiah 1 milliar rupiah.`);
+            } else if (e.target.value === 'Tokopedia') {
+                result.text(`Halo kami dari ${e.target.value} kami kami ingin memberikan anda hadiah yaitu mobil BMW 1 unit.`);
             } else {
-                result.text(`Halo kami dari ${event.target.value} kami ingin menginformasikan kepada anda bahwa kantor kami telah berubah alamat.`);
+                result.text(`Halo kami dari ${e.target.value} kami ingin menginformasikan kepada anda bahwa kantor kami telah berubah alamat.`);
             }
         })
 
@@ -364,7 +364,7 @@
             let fd = new FormData();
 
             fd.append('file', fileUpload);
-            fd.append([csrfName], csrfHash);
+            // fd.append([csrfName], csrfHash);
             fd.append('dataEmail', dataEmailValue);
             fd.append('description', description);
             console.log(fd);

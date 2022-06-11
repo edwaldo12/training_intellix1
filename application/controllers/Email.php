@@ -16,15 +16,17 @@ class Email extends CI_Controller
     }
 
     public function get()
+
     {
-        $email = $this->Email->getAllEmail();
         $sendParameter = $this->input->get();
-        $email = $this->Email->getSimilarity($sendParameter['search']['value']);
+        $dataLimited = $this->Email->getAllEmail($sendParameter['search']['value'], $sendParameter['length'], $sendParameter['start'] * $sendParameter['length']);
+        $recordsFiltered = $this->Email->getAllFiltered($sendParameter['search']['value']);
+        $countAll = $this->Email->countAll();
         $returnedData = [
-            'draw' => $sendParameter['draw'],
-            "data" => $email->findAll($sendParameter['length'], $sendParameter['start'] * $sendParameter['length']),
-            'recordsFiltered' => $email->countAllResults(),
-            'recordsTotal' => $email->countAll(),
+            'draw' => $sendParameter['draw'], 
+            "data" => $dataLimited,
+            'recordsFiltered' => $recordsFiltered,
+            'recordsTotal' => $countAll,
         ];
         return json_encode($returnedData);
     }
