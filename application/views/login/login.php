@@ -13,7 +13,7 @@
     <link rel="stylesheet" href=<?= base_url("adminlte/plugins/icheck-bootstrap/icheck-bootstrap.min.css") ?>>
 
     <link rel="stylesheet" href=<?= base_url("adminlte/dist/css/adminlte.min.css?v=3.2.0") ?>>
-    <script nonce="4aca0c8f-7785-4899-af0b-2413551d0fcf">
+    <!-- <script nonce="4aca0c8f-7785-4899-af0b-2413551d0fcf">
         (function(w, d) {
             ! function(a, e, t, r) {
                 a.zarazData = a.zarazData || {}, a.zarazData.executed = [], a.zaraz = {
@@ -48,7 +48,7 @@
                 }))
             }(w, d, 0, "script");
         })(window, document);
-    </script>
+    </script> -->
 </head>
 
 <body class="hold-transition login-page">
@@ -72,29 +72,29 @@
         <div class="card">
             <div class="card-body login-card-body">
                 <p class="login-box-msg">Sign in to start your session</p>
-                <form action="<?= base_url('login/loginPengguna') ?>" method="post">
-                    <div class="input-group mb-3">
-                        <input type="Username" class="form-control" placeholder="Username" name="username">
-                        <div class="input-group-append">
-                            <div class="input-group-text">
-                                <span class="fas fa-envelope"></span>
-                            </div>
+                <?= form_open('login/loginPengguna') ?>
+                <div class="input-group mb-3">
+                    <input type="Username" class="form-control" placeholder="Username" name="username">
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-envelope"></span>
                         </div>
                     </div>
-                    <div class="input-group mb-3">
-                        <input type="password" class="form-control" placeholder="Password" name="password">
-                        <div class="input-group-append">
-                            <div class="input-group-text">
-                                <span class="fas fa-lock"></span>
-                            </div>
+                </div>
+                <div class="input-group mb-3">
+                    <input type="password" class="form-control" placeholder="Password" name="password">
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-lock"></span>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-4">
-                            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
-                        </div>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <button type="submit" class="btn btn-primary btn-block">Sign In</button>
                     </div>
-                </form>
+                </div>
+                <?= form_close() ?>
             </div>
         </div>
     </div>

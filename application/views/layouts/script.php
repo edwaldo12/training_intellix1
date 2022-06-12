@@ -21,7 +21,7 @@
 <script src="<?= base_url("adminlte/plugins/moment/moment.min.js") ?>"></script>
 <script src="<?= base_url("adminlte/plugins/daterangepicker/daterangepicker.js") ?>"></script>
 <!-- Tempusdominus Bootstrap 4 -->
-<script src="<?= base_url("vplugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js") ?>"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.38.0/js/tempusdominus-bootstrap-4.min.js" crossorigin="anonymous"></script> -->
 <!-- Summernote -->
 <script src="<?= base_url("adminlte/plugins/summernote/summernote-bs4.min.js") ?>"></script>
 <!-- overlayScrollbars -->
