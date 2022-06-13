@@ -208,7 +208,8 @@
                                         <button class="btn btn-danger btn-sm text-white">
                                             <i class="fa fa-trash"></i>
                                         </button>
-                                    </a>`
+                                    </a>
+                                `
                     }
                 }
             ],
