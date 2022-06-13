@@ -161,7 +161,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <strong>Are you sure to delete this record?</strong>
+                    <strong>Are you sure to delete this record ?</strong>
                 </div>
                 <div class="modal-footer">
                     <input type="hidden" name="email_deleted" id="email_deleted" class="form-control">
