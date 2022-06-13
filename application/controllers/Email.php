@@ -72,10 +72,9 @@ class Email extends CI_Controller
         }
     }
 
-    public function update()
+    public function update($id)
     {
         $postData = $this->input->post();
-
         $config['upload_path']          = './upload/';
         $config['allowed_types']        = 'pdf|csv|doc|docx|xls|xlsx|ppt|pptx';
         $config['max_size']             = 8192;
@@ -83,14 +82,14 @@ class Email extends CI_Controller
         $config['max_height']           = 3200;
 
         $this->load->library('upload', $config);
-        $data['email'] = $this->Email->getEmail('id', $postData['email_id']);
+        $data['email'] = $this->Email->getEmail($id);
 
-        if ($this->upload->do_upload('file')) {
+        if ($this->upload->do_upload('editFile')) {
             $uploadData = $this->upload->data();
-            $this->Email->updateEmail($postData['email_id'], [
-                'data' => $postData['dataEmail'],
-                'description' => $postData['description'],
-                'file' => $uploadData['editFile'],
+            $this->Email->updateEmail($postData['data_id_email'], [
+                'data' => $postData['data'],
+                'description' => $postData['description_edit'],
+                'file' => $uploadData['file_name'],
             ]);
 
             echo json_encode(

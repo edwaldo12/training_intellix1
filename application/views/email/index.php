@@ -133,7 +133,6 @@
                         </div>
                         <div style="color:red">Maximum 10 Mb.</div>
                     </div>
-                    kasih last value buat input file string aja ya
                     <div class="form-group row">
                         <label for="description" class="col-md-2 col-form-label">Description</label>
                         <input type="text" class="form-control" id="description_edit" placeholder="Masukkan Description" name="description_edit">
@@ -302,7 +301,6 @@
             $('[name="data_id_email"]').val(id_email);
             $('#data-template_edit').val(data);
             $('[name="description_edit"]').val(description);
-            $('[name="editFile"]').val(file);
 
             dataEmailEdit.on('change', function(event) {
                 const result = $('#text_template_edit');
@@ -324,9 +322,12 @@
             let fd = new FormData($('#FormEdit')[0]);
 
             $.ajax({
-                type: "PATCH",
-                url: "<?= base_url('email/update') ?>" + '/' + email_id,
-                dataType: "JSON",
+                type: "POST",
+                url: "<?= base_url('email/update/') ?>" + email_id,
+                dataType: "json",
+                contentType: false,
+                cache: false,
+                processData: false,
                 data: fd,
                 success: () => {
                     alert('Success Updated Data');

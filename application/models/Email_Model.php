@@ -33,7 +33,7 @@ class Email_Model extends CI_Model
 	public function getEmail($id)
 	{
 		$this->db->where('id', $id);
-		return $this->db->get('tbl_email')->row_array();
+		$this->db->get('tbl_email')->row_array();
 	}
 
 	public function updateEmail($id, $data)
