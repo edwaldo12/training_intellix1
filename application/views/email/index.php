@@ -46,7 +46,6 @@
                     <div class="card-header">
                         <h3 class="card-title">Kirim Email</h3>
                     </div>
-                    <!-- <div class="alert display:none" id="responseMsg"></div> -->
                     <?= form_open_multipart('email/store', ['id' => 'FormEmail']) ?>
                     <div console.log(fd.entries); class="card-body">
                         <div class="row">
@@ -199,12 +198,12 @@
                     "data": null,
                     "render": function(data, type, row) {
                         return `
-                                    <a class="btn_edit" href="javascript:void(0);" data-id='${data.id}' data-email_data=${data.data} data-email_description=${data.description}  data-email_file='${data.file}'>
+                                    <a class="btn_edit" href="javascript:void(0);" data-id="${data.id}" data-email_data="${data.data}" data-email_description="${data.description}" data-email_file="${data.file}">
                                         <button class="btn btn-warning btn-sm text-white">
                                             <i class="fa fa-pen"></i>
                                         </button>
                                     </a>
-                                    <a class="btn_delete" href="javascript:void(0);" data-id='${data.id}'>
+                                    <a class="btn_delete" href="javascript:void(0);" data-id="${data.id}">
                                         <button class="btn btn-danger btn-sm text-white">
                                             <i class="fa fa-trash"></i>
                                         </button>
@@ -296,7 +295,6 @@
             let id_email = $(this).data('id');
             let data = $(this).data('email_data');
             let description = $(this).data('email_description');
-            let file = $(this).data('email_file');
 
             $('#Modal_Edit').modal('show');
             $('[name="data_id_email"]').val(id_email);
